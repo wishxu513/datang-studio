@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import IntroLoading from "@/components/IntroLoading";
 import HeroVideo from "@/components/HeroVideo";
 import Navbar from "@/components/Navbar";
@@ -15,11 +15,8 @@ import Image from "next/image";
 import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
+  // 狀態流：loading -> intro -> main
   const [stage, setStage] = useState<"loading" | "intro" | "main">("loading");
-
-  useEffect(() => {
-    // Initial asset preloading logic would go here
-  }, []);
 
   if (stage === "loading") {
     return <IntroLoading onComplete={() => setStage("intro")} />;
