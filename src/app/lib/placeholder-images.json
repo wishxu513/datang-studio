@@ -1,0 +1,47 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "Minimalist living room with natural light",
+      "imageUrl": "https://picsum.photos/seed/10/1920/1080",
+      "imageHint": "minimalist livingroom"
+    },
+    {
+      "id": "project-1",
+      "description": "Modern residential apartment interior",
+      "imageUrl": "https://picsum.photos/seed/11/1200/800",
+      "imageHint": "residential interior"
+    },
+    {
+      "id": "project-2",
+      "description": "High-end commercial office space",
+      "imageUrl": "https://picsum.photos/seed/12/1200/800",
+      "imageHint": "commercial interior"
+    },
+    {
+      "id": "project-3",
+      "description": "Luxury show home bedroom",
+      "imageUrl": "https://picsum.photos/seed/13/1200/800",
+      "imageHint": "bedroom interior"
+    },
+    {
+      "id": "about-large",
+      "description": "Architectural detail of a modern space",
+      "imageUrl": "https://picsum.photos/seed/14/800/1000",
+      "imageHint": "architecture detail"
+    },
+    {
+      "id": "about-small-1",
+      "description": "Textured material palette",
+      "imageUrl": "https://picsum.photos/seed/15/600/400",
+      "imageHint": "texture material"
+    },
+    {
+      "id": "about-small-2",
+      "description": "Soft light hitting a wall",
+      "imageUrl": "https://picsum.photos/seed/16/600/400",
+      "imageHint": "light shadow"
+    }
+  ]
+}

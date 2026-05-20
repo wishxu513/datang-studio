@@ -1,0 +1,65 @@
+
+[
+  {
+    "slug": "zen-residential",
+    "title": "靜謐之居",
+    "category": "住宅空間",
+    "categoryEn": "residential",
+    "year": "2024",
+    "location": "台北市",
+    "size": "35坪",
+    "description": "本案以簡約、溫潤的木質調為基底，透過大面積留白與細膩的收納設計，為繁忙的城市生活找回純粹的寧靜與秩序。",
+    "mainImage": "https://picsum.photos/seed/p1/1920/1080",
+    "gallery": [
+      "https://picsum.photos/seed/p1-1/1200/800",
+      "https://picsum.photos/seed/p1-2/1200/800",
+      "https://picsum.photos/seed/p1-3/1200/800"
+    ]
+  },
+  {
+    "slug": "urban-commercial",
+    "title": "雅致藝廊",
+    "category": "商業空間",
+    "categoryEn": "commercial",
+    "year": "2023",
+    "location": "台中市",
+    "size": "50坪",
+    "description": "運用光影交錯與金屬材質的對比，打造充滿現代感卻又不失溫度的藝文空間，讓每一件展品與空間環境共生共榮。",
+    "mainImage": "https://picsum.photos/seed/p2/1920/1080",
+    "gallery": [
+      "https://picsum.photos/seed/p2-1/1200/800",
+      "https://picsum.photos/seed/p2-2/1200/800"
+    ]
+  },
+  {
+    "slug": "luxury-showhome",
+    "title": "雲端官邸",
+    "category": "實品屋",
+    "categoryEn": "show-home",
+    "year": "2024",
+    "location": "新北市",
+    "size": "80坪",
+    "description": "針對高端客群設計，運用石材紋理、精緻鍍鈦與皮革裝飾，演繹奢華低調的質感，展現尊榮的生活格局。",
+    "mainImage": "https://picsum.photos/seed/p3/1920/1080",
+    "gallery": [
+      "https://picsum.photos/seed/p3-1/1200/800",
+      "https://picsum.photos/seed/p3-2/1200/800",
+      "https://picsum.photos/seed/p3-3/1200/800"
+    ]
+  },
+  {
+    "slug": "light-office",
+    "title": "晨光工作坊",
+    "category": "商業空間",
+    "categoryEn": "commercial",
+    "year": "2023",
+    "location": "桃園市",
+    "size": "25坪",
+    "description": "以開放式格局為核心，引入大量採光，打造舒適、高效率且具備創意的辦公環境。",
+    "mainImage": "https://picsum.photos/seed/p4/1920/1080",
+    "gallery": [
+      "https://picsum.photos/seed/p4-1/1200/800",
+      "https://picsum.photos/seed/p4-2/1200/800"
+    ]
+  }
+]
