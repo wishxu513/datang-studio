@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -10,55 +9,65 @@ interface HeroVideoProps {
 export default function HeroVideo({ onEnded }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVisible, setIsVisible] = useState(true);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
 
-  // 統一處理退出影片並進入首頁的函式
+  const desktopVideo =
+    "https://wishxu513.github.io/datang-website/datang-website.webm";
+
+  const mobileVideo =
+    "https://raw.githubusercontent.com/wishxu513/datang-studio/main/public/videos/mobile-intro.webm";
+
   const handleFinish = () => {
     setIsVisible(false);
-    // 預留一點時間讓淡出動畫完成
     setTimeout(onEnded, 800);
   };
 
   useEffect(() => {
-    // 5 秒安全機制：如果 5 秒內影片沒開始播放（載入太慢或被攔截），直接跳過
-    const safetyTimer = setTimeout(() => {
-      if (!hasStarted) {
-        console.warn("HeroVideo: Video failed to start within 5s, skipping...");
-        handleFinish();
-      }
-    }, 5000);
+    const isMobile = window.innerWidth <= 768;
+    const selectedVideo = isMobile ? mobileVideo : desktopVideo;
 
-    // 嘗試手動觸發播放（應對部分瀏覽器的策略）
-    if (videoRef.current) {
-      videoRef.current.play().catch((err) => {
-        console.warn("HeroVideo: Auto-play might be blocked", err);
-      });
-    }
+    console.log("HeroVideo selected source:", selectedVideo);
+    setVideoSrc(selectedVideo);
+  }, []);
 
-    return () => clearTimeout(safetyTimer);
-  }, [hasStarted]);
+  useEffect(() => {
+    if (!videoSrc || !videoRef.current) return;
+
+    const timer = setTimeout(() => {
+      console.warn("HeroVideo: timeout fallback");
+      handleFinish();
+    }, 12000);
+
+    videoRef.current.play().catch((err) => {
+      console.warn("HeroVideo autoplay failed:", err);
+    });
+
+    return () => clearTimeout(timer);
+  }, [videoSrc]);
+
+  if (!videoSrc) return null;
 
   return (
-    <div 
+    <div
       className={`fixed inset-0 z-[90] bg-black flex items-center justify-center transition-opacity duration-1000 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
       <video
         ref={videoRef}
+        key={videoSrc}
         autoPlay
         muted
         playsInline
-        onPlaying={() => setHasStarted(true)}
+        preload="auto"
         onEnded={handleFinish}
-        onError={() => {
-          console.error("HeroVideo: Video source error");
+        onError={(e) => {
+          console.error("HeroVideo source error:", videoSrc, e);
           handleFinish();
         }}
         className="h-full w-full object-cover"
       >
-        <source src="https://wishxu513.github.io/datang-website/datang-website.webm" type="video/webm" />
-        {/* 如果需要備援，可以在此加入其他格式，但優先遵循使用者指定的 webm */}
+        <source src={videoSrc} type="video/webm" />
       </video>
     </div>
   );
